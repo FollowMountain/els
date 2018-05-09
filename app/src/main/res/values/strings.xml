@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">农仁街农资进销存管理系统</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="permission_request">该功能需您授予"存储"和"相机"权限才可正常使用</string>
+    <string name="operate_fail">操作失败</string>
+    <string name="select_photo_first">请先选择一张图片</string>
+    <string name="selectbluetoothdevice">请选择蓝牙设备</string>
+</resources>
