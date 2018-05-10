@@ -155,7 +155,6 @@ public class MainActivity extends BaseAgentWebViewActivity {
         if (mAgentWeb != null && mAgentWeb.handleKeyEvent(keyCode, event)) {
             return true;
         }
-
         return super.onKeyDown(keyCode, event);
     }
 
@@ -306,7 +305,7 @@ public class MainActivity extends BaseAgentWebViewActivity {
                         } else {
                             path = localMedia.getPath(); // 原图
                         }
-                        Uri uri = Uri.fromFile(new File(path));
+                        Uri uri = ToolsUtils.getImageContentUri(this, new File(path));
                         mUploadMessage.onReceiveValue(uri);
                     } else {
                         mUploadMessage.onReceiveValue(null);
@@ -347,7 +346,7 @@ public class MainActivity extends BaseAgentWebViewActivity {
                         // 原图
                         path = localMedia.getPath();
                     }
-                    Uri uri = Uri.fromFile(new File(path));
+                    Uri uri = ToolsUtils.getImageContentUri(this, new File(path));
                     results[i] = uri;
                 }
             }
@@ -360,7 +359,6 @@ public class MainActivity extends BaseAgentWebViewActivity {
                     results[i] = item.getUri();
                 }
             }
-
         }
         if (results != null) {
             mFilePathCallback.onReceiveValue(results);
