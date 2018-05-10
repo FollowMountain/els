@@ -267,7 +267,8 @@ public class MainActivity extends BaseAgentWebViewActivity {
                 }
                 break;
             case Constant.REQUEST_QR_CODE:
-                String methodName = "getResult" + JSNativeInterface.type;
+//                String methodName = "getResult" + JSNativeInterface.type;
+                String methodName = "QR_handler";
                 if (resultCode == RESULT_OK && data != null) {
                     String result = data.getStringExtra("result");
                     mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, result);

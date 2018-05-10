@@ -19,7 +19,7 @@ public class JSNativeInterface {
     //    private PhotoPopWindow mPhontoPopWindow;
 //    private MaterialDialog mPermissionDialog;
 //    private TextView mTitleTextView;
-    public static String type = "";
+//    public static String type = "";
 
     private String TAG = "FolloMountains_els";
 
@@ -57,8 +57,8 @@ public class JSNativeInterface {
 //    }
 
     @JavascriptInterface
-    public void startQRCode(String type) {
-        this.type = type;
+    public void showCamera() {
+//        this.type = type;
         Intent i = new Intent(context, CaptureActivity.class);
         context.startActivityForResult(i, Constant.REQUEST_QR_CODE);
     }
