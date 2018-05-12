@@ -267,12 +267,14 @@ public class MainActivity extends BaseAgentWebViewActivity {
                 break;
             case Constant.REQUEST_QR_CODE:
 //                String methodName = "getResult" + JSNativeInterface.type;
-                String methodName = "QR_handler";
+//                String methodName = "QR_handler";
                 if (resultCode == RESULT_OK && data != null) {
                     String result = data.getStringExtra("result");
-                    mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, result);
-                } else {
-                    mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, "-1");
+//                    mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, result);
+//                } else {
+//                    mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, "-1");
+                    JSNativeInterface.isOver = false;
+                    JSNativeInterface.resultData = result;
                 }
                 break;
             case PictureConfig.CHOOSE_REQUEST:

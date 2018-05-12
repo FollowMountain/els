@@ -15,6 +15,9 @@ import io.github.xudaojie.qrcodelib.CaptureActivity;
 
 public class JSNativeInterface {
 
+    public static boolean isOver = true;
+    public static String resultData = "";
+
     private Activity context;
     //    private PhotoPopWindow mPhontoPopWindow;
 //    private MaterialDialog mPermissionDialog;
@@ -57,10 +60,21 @@ public class JSNativeInterface {
 //    }
 
     @JavascriptInterface
-    public void showCamera() {
+    public String showCamera() {
 //        this.type = type;
         Intent i = new Intent(context, CaptureActivity.class);
         context.startActivityForResult(i, Constant.REQUEST_QR_CODE);
+        isOver = true;
+        while (isOver) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        String barcodeReturn = resultData;
+        resultData = "";
+        return barcodeReturn;
     }
 
     @JavascriptInterface
