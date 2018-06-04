@@ -275,6 +275,9 @@ public class MainActivity extends BaseAgentWebViewActivity {
 //                    mAgentWeb.getJsAccessEntrace().quickCallJs(methodName, "-1");
                     JSNativeInterface.isOver = false;
                     JSNativeInterface.resultData = result;
+                }else{
+                    JSNativeInterface.isOver = false;
+                    JSNativeInterface.resultData = "";
                 }
                 break;
             case PictureConfig.CHOOSE_REQUEST:

@@ -37,10 +37,12 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.MainActivity"
+            android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.SplashScreenActivity"
+            android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -50,7 +52,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="io.github.xudaojie.qrcodelib.CaptureActivity" />
+        <activity
+            android:name="io.github.xudaojie.qrcodelib.CaptureActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
